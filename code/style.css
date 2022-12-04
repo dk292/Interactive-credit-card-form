@@ -1,0 +1,320 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap");
+
+:root {
+  --linear-gradient-active-input-border: linear-gradient(
+    hsl(249, 99%, 64%),
+    hsl(278, 94%, 30%)
+  );
+  --red-input-errors: hsl(0, 100%, 66%);
+  --white: hsl(0, 0%, 100%);
+  --light-grayish-violet: hsl(270, 3%, 87%);
+  --dark-grayish-violet: hsl(279, 6%, 55%);
+  --very-dark-violet: hsl(278, 68%, 11%);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Space Grotesk", sans-serif;
+}
+
+img {
+  width: 100%;
+}
+
+.container {
+  position: relative;
+}
+
+.container {
+  background-image: url(../images/bg-main-mobile.png);
+  height: 30vh;
+}
+
+.container #back-img {
+  width: 70%;
+  position: absolute;
+  top: 21.5%;
+  right: 3.5%;
+}
+
+.container #back-img > .textBox {
+  position: relative;
+}
+
+#back-img .textBox > #pinNum {
+  font-size: 0.8rem;
+  position: absolute;
+  top: 42%;
+  right: 12%;
+  color: var(--light-grayish-violet);
+  z-index: 1;
+}
+
+.container #front-img {
+  width: 70%;
+  position: absolute;
+  top: 55%;
+  left: 3.5%;
+  z-index: 2;
+}
+
+.circle-1 {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: var(--white);
+  position: absolute;
+  top: 7%;
+  left: 7%;
+}
+
+.circle-2 {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 1px solid var(--light-grayish-violet);
+  position: absolute;
+  top: 11.5%;
+  left: 24%;
+}
+
+.infoContainer {
+  position: absolute;
+  top: 45%;
+  left: 7%;
+  color: var(--light-grayish-violet);
+}
+
+#cardNum {
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin-bottom: 0.8rem;
+}
+
+#holderName {
+  font-weight: 500;
+  font-size: 0.7rem;
+  display: inline;
+  text-transform: uppercase;
+}
+
+#exprDate {
+  font-size: 0.7rem;
+  margin-left: 6.5rem;
+}
+
+#field {
+  width: 80%;
+  margin: 8rem auto 2rem;
+}
+
+#field div {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+#field div > label {
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--very-dark-violet);
+  letter-spacing: 0.1rem;
+  margin-bottom: 0.35rem;
+}
+
+#field div > input {
+  padding: 0.7rem;
+  border: 1px solid var(--light-grayish-violet);
+  border-radius: 7px;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+}
+
+#field div > input::placeholder {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--light-grayish-violet);
+  font-family: "Space Grotesk", sans-serif;
+}
+
+#field .bot-con {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: center;
+  align-items: center;
+}
+
+#field .bot-con h2 {
+  font-size: 1rem;
+  grid-column: 1;
+}
+
+#field .expire-date {
+  width: 25%;
+}
+
+#field .expire-date {
+  grid-row: 2;
+}
+
+#field .expire-date #month {
+  width: 55px;
+}
+
+#field .expire-date #year {
+  width: 55px;
+}
+
+#field #cvc-box {
+  overflow: hidden;
+  grid-row: 2;
+  grid-column: 3 / span 4;
+}
+
+#field #btn {
+  width: 100%;
+  font-size: 1rem;
+  padding: 0.7rem;
+  color: var(--white);
+  background-color: var(--very-dark-violet);
+  border-radius: 8px;
+}
+/* Input Effect */
+#field div > input:hover {
+  cursor: pointer;
+  background: linear-gradient(white, white) padding-box,
+    linear-gradient(to right, hsl(249, 99%, 64%), hsl(278, 94%, 30%)) border-box;
+  border: 2px solid transparent;
+}
+
+/* Error Message  */
+#field div[data-error] input {
+  border-color: var(--red-input-errors);
+  color: var(--red-input-errors);
+  background: white;
+}
+
+#field div[data-error]::after {
+  content: attr(data-error);
+  font-size: 0.6rem;
+  color: var(--red-input-errors);
+  margin: 0.3rem 0.1rem;
+}
+
+/* Complete Container */
+.complete-container {
+  text-align: center;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+.complete {
+  width: 40%;
+  margin: 0 auto;
+}
+
+.complete-container h2 {
+  font-size: 2rem;
+  color: var(--very-dark-violet);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.complete-container p {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--dark-grayish-violet);
+  margin-bottom: 1.5rem;
+}
+
+.complete-container a {
+  text-decoration: none;
+  width: 100%;
+  background-color: var(--very-dark-violet);
+  padding: 0.7rem;
+  border-radius: 5px;
+  color: var(--white);
+}
+
+@media (min-width: 700px) and (max-width: 1000px) {
+  html {
+    font-size: 29px;
+  }
+
+  .circle-1 {
+    width: 70px;
+    height: 70px;
+  }
+
+  .circle-2 {
+    width: 25px;
+    height: 25px;
+  }
+
+  #cardNum {
+    letter-spacing: 3px;
+  }
+
+  #field .expire-date #month {
+    width: 100px;
+  }
+
+  #field .expire-date #year {
+    width: 100px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid-container {
+    display: grid;
+    grid-template-columns: 0.5fr 1fr;
+  }
+
+  .container {
+    background-image: url(../images/bg-main-desktop.png);
+    height: 100vh;
+  }
+
+  .container #front-img {
+    width: 90%;
+    top: 19%;
+    left: 40%;
+  }
+
+  .container #back-img {
+    width: 90%;
+    top: 50%;
+    left: 50%;
+  }
+
+  #field {
+    width: 50%;
+    margin: 8rem auto;
+  }
+}
+
+@media (min-width: 1445px) {
+  html {
+    font-size: 22px;
+  }
+
+  #field .expire-date #month {
+    width: 100px;
+  }
+  #field .expire-date #year {
+    width: 100px;
+  }
+}
